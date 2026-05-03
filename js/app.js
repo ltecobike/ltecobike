@@ -269,38 +269,30 @@ const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
 
 if (contactForm && formStatus) {
-  contactForm.addEventListener("submit", async function (event) {
-    event.preventDefault();
+  contactForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
     const data = new FormData(contactForm);
 
     formStatus.textContent = "Enviando consulta...";
-    formStatus.classList.remove("error", "success");
+    formStatus.classList.remove("success", "error");
 
     try {
-      const response = await fetch("https://formspree.io/f/mjglyvqg", {
+      const res = await fetch("/contacto", {
         method: "POST",
-        body: data,
-        headers: {
-          "Accept": "application/json"
-        }
+        body: data
       });
 
-      if (response.ok) {
+      if (res.ok) {
         formStatus.textContent = "Consulta enviada correctamente. Te responderemos a la brevedad.";
         formStatus.classList.add("success");
         contactForm.reset();
       } else {
-        const result = await response.json().catch(() => null);
-        console.log("Error Formspree:", result);
-
-        formStatus.textContent = "No se pudo enviar la consulta. Revisá que el correo esté bien escrito.";
+        formStatus.textContent = "No se pudo enviar la consulta. Intentá nuevamente.";
         formStatus.classList.add("error");
       }
     } catch (error) {
-      console.log("Error de conexión:", error);
-
-      formStatus.textContent = "Error de conexión. Probá desde la web publicada, no desde el archivo local.";
+      formStatus.textContent = "Error de conexión. Intentá nuevamente.";
       formStatus.classList.add("error");
     }
   });

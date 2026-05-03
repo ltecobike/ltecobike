@@ -44,10 +44,7 @@
       <h2>Hablemos</h2>
       <p class="contact-intro">Completá tus datos y te responderemos a la brevedad.</p>
 
-      <form id="contactForm" action="https://formspree.io/f/mjglyvqg" method="POST">
-
-        <input type="hidden" name="_subject" value="Nueva consulta desde Ltecobike">
-
+      <form id="contactForm" class="lteco-contact-form">
         <div class="form-group">
           <label>Nombre</label>
           <input type="text" name="nombre" required>
@@ -60,12 +57,11 @@
 
         <div class="form-group">
           <label>Celular</label>
-          <input type="tel" name="celular">
+          <input type="tel" name="celular" required>
         </div>
 
         <div class="form-group">
           <label>Correo electrónico</label>
-          <!-- ESTE ES EL IMPORTANTE -->
           <input type="email" name="email" required>
         </div>
 
@@ -74,10 +70,9 @@
           <textarea name="message" required></textarea>
         </div>
 
-        <button type="submit" class="btn">ENVIAR CONSULTA</button>
+        <button type="submit" class="btn contact-main-btn">ENVIAR CONSULTA</button>
 
         <p id="formStatus" class="form-status"></p>
-
       </form>
     </div>
 
