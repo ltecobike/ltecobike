@@ -17,7 +17,7 @@ export async function onRequestPost(context) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        from: "Ltecobike <onboarding@resend.dev>",
+        from: "Ltecobike <contacto@ltecobike.shop>",
         to: ["ltecobike@gmail.com"],
         subject: "Nueva consulta desde Ltecobike",
         html: `
