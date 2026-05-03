@@ -10,6 +10,24 @@ export async function onRequestPost(context) {
     const email = data.get("email") || "";
     const mensaje = data.get("message") || "";
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (nombre.trim().length < 2) {
+        return new Response("El nombre debe tener al menos 2 caracteres.", { status: 400 });
+      }
+
+      if (!emailRegex.test(email.trim())) {
+        return new Response("El correo electrónico no es válido.", { status: 400 });
+      }
+
+      if (mensaje.trim().length < 10) {
+        return new Response("El mensaje debe tener al menos 10 caracteres.", { status: 400 });
+      }
+
+      if (mensaje.trim().length > 1000) {
+        return new Response("El mensaje no puede superar los 1000 caracteres.", { status: 400 });
+      }
+
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {

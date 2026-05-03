@@ -288,7 +288,8 @@ if (contactForm && formStatus) {
         formStatus.classList.add("success");
         contactForm.reset();
       } else {
-        formStatus.textContent = "No se pudo enviar la consulta. Intentá nuevamente.";
+        const errorText = await res.text();
+        formStatus.textContent = errorText || "No se pudo enviar la consulta. Intentá nuevamente.";
         formStatus.classList.add("error");
       }
     } catch (error) {

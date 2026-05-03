@@ -47,7 +47,7 @@
       <form id="contactForm" class="lteco-contact-form">
         <div class="form-group">
           <label>Nombre y Apellido</label>
-          <input type="text" name="nombre" required>
+          <input type="text" name="nombre" minlength="2" maxlength="60" required>
         </div>
 
         <div class="form-group">
@@ -57,7 +57,7 @@
 
         <div class="form-group">
           <label>Mensaje</label>
-          <textarea name="message" required></textarea>
+          <textarea name="message" minlength="10" maxlength="1000" required></textarea>
         </div>
 
         <button type="submit" class="btn contact-main-btn">ENVIAR CONSULTA</button>
