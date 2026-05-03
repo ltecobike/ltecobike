@@ -264,3 +264,44 @@ galleries.forEach((gallery) => {
   gallery.addEventListener("focusin", stopAutoplay);
   gallery.addEventListener("focusout", startAutoplay);
 });
+
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+
+if (contactForm && formStatus) {
+  contactForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const data = new FormData(contactForm);
+
+    formStatus.textContent = "Enviando consulta...";
+    formStatus.classList.remove("error", "success");
+
+    try {
+      const response = await fetch("https://formspree.io/f/mjglyvqg", {
+        method: "POST",
+        body: data,
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (response.ok) {
+        formStatus.textContent = "Consulta enviada correctamente. Te responderemos a la brevedad.";
+        formStatus.classList.add("success");
+        contactForm.reset();
+      } else {
+        const result = await response.json().catch(() => null);
+        console.log("Error Formspree:", result);
+
+        formStatus.textContent = "No se pudo enviar la consulta. Revisá que el correo esté bien escrito.";
+        formStatus.classList.add("error");
+      }
+    } catch (error) {
+      console.log("Error de conexión:", error);
+
+      formStatus.textContent = "Error de conexión. Probá desde la web publicada, no desde el archivo local.";
+      formStatus.classList.add("error");
+    }
+  });
+}

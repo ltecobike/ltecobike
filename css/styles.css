@@ -922,3 +922,180 @@ a {
 .faq-grid .feature-box p {
   color: white;
 }
+
+
+.lteco-contact-form {
+  margin-top: 22px;
+  display: grid;
+  gap: 16px;
+}
+
+.form-group {
+  display: grid;
+  gap: 7px;
+}
+
+.form-group label {
+  font-weight: 700;
+  color: #111827;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #d6d3cc;
+  border-radius: 12px;
+  background: #f7f7f4;
+  color: #111827;
+  font: inherit;
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #7aa95c;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(122, 169, 92, 0.15);
+}
+
+.contact-premium-section {
+  padding-top: 56px;
+}
+
+.contact-premium {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) 360px;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.contact-card,
+.contact-side-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(27, 97, 55, 0.16);
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(20, 42, 28, 0.12);
+}
+
+.contact-card {
+  padding: 30px;
+}
+
+.contact-card h2 {
+  margin-bottom: 6px;
+  color: #155f36;
+}
+
+.contact-intro {
+  margin-bottom: 22px;
+  color: #5f665f;
+}
+
+.lteco-contact-form {
+  display: grid;
+  gap: 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-group {
+  display: grid;
+  gap: 7px;
+}
+
+.form-group label {
+  font-weight: 800;
+  font-size: 14px;
+  color: #102417;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #d7d0c2;
+  border-radius: 14px;
+  background: #fbfaf7;
+  color: #111827;
+  font: inherit;
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 145px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #178342;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(23, 131, 66, 0.13);
+}
+
+.contact-main-btn {
+  justify-self: start;
+  margin-top: 4px;
+}
+
+.contact-side-card {
+  overflow: hidden;
+}
+
+.contact-side-img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.contact-side-info {
+  padding: 24px;
+}
+
+.contact-side-info h3 {
+  color: #155f36;
+  margin-bottom: 14px;
+}
+
+.contact-side-info p {
+  margin-bottom: 8px;
+}
+
+.contact-mini-actions {
+  margin-top: 18px;
+}
+
+@media (max-width: 900px) {
+  .contact-premium {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-status {
+  margin-top: 10px;
+  font-weight: 700;
+  color: #155f36;
+}
+
+.form-status.success {
+  color: #155f36;
+}
+
+.form-status.error {
+  color: #b42318;
+}

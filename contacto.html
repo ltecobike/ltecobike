@@ -37,26 +37,69 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="container two-col">
-      <div class="contact-box">
-        <h2>Hablemos</h2>
+  <section class="section contact-premium-section">
+  <div class="container contact-premium">
+
+    <div class="contact-card">
+      <h2>Hablemos</h2>
+      <p class="contact-intro">Completá tus datos y te responderemos a la brevedad.</p>
+
+      <form id="contactForm" action="https://formspree.io/f/mjglyvqg" method="POST">
+
+        <input type="hidden" name="_subject" value="Nueva consulta desde Ltecobike">
+
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+          <label>Apellido</label>
+          <input type="text" name="apellido">
+        </div>
+
+        <div class="form-group">
+          <label>Celular</label>
+          <input type="tel" name="celular">
+        </div>
+
+        <div class="form-group">
+          <label>Correo electrónico</label>
+          <!-- ESTE ES EL IMPORTANTE -->
+          <input type="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Mensaje</label>
+          <textarea name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">ENVIAR CONSULTA</button>
+
+        <p id="formStatus" class="form-status"></p>
+
+      </form>
+    </div>
+
+    <aside class="contact-side-card">
+      <img src="img/logoFondo.jpeg" alt="Ltecobike" class="contact-side-img">
+
+      <div class="contact-side-info">
+        <h3>Ltecobike</h3>
         <p><strong>WhatsApp:</strong> 092 000 086</p>
         <p><strong>Email:</strong> ltecobike@gmail.com</p>
         <p><strong>Ciudad:</strong> Montevideo</p>
         <p><strong>Instagram:</strong> @ltecobike</p>
 
-        <div class="hero-actions" style="margin-top: 18px;">
-          <a class="btn" href="https://wa.me/59892000086" target="_blank">Escribir por WhatsApp</a>
-          <a class="btn btn-outline" href="https://instagram.com/ltecobike" target="_blank">Ver Instagram</a>
+        <div class="hero-actions contact-mini-actions">
+          <a class="btn" href="https://wa.me/59892000086" target="_blank">WhatsApp</a>
+          <a class="btn btn-outline" href="https://instagram.com/ltecobike" target="_blank">Instagram</a>
         </div>
       </div>
+    </aside>
 
-      <div>
-        <img src="img/logoFondo.jpeg" alt="Ltecobike lineup" class="rounded-img" />
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
   <section class="section">
   <div class="container">
