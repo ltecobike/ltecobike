@@ -5,8 +5,6 @@ export async function onRequestPost(context) {
     const data = await request.formData();
 
     const nombre = data.get("nombre") || "";
-    const apellido = data.get("apellido") || "";
-    const celular = data.get("celular") || "";
     const email = data.get("email") || "";
     const mensaje = data.get("message") || "";
 
@@ -39,12 +37,17 @@ export async function onRequestPost(context) {
         to: ["ltecobike@gmail.com"],
         subject: "Nueva consulta desde Ltecobike",
         html: `
-          <h2>Nueva consulta desde la web</h2>
-          <p><strong>Nombre:</strong> ${nombre} ${apellido}</p>
-          <p><strong>Celular:</strong> ${celular}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Mensaje:</strong></p>
-          <p>${mensaje}</p>
+          <div style="font-family: Arial, sans-serif; color: #111;">
+            <h2 style="color:#155f36;">Nueva consulta desde Ltecobike</h2>
+
+            <p><strong>Nombre y apellido:</strong> ${nombre}</p>
+            <p><strong>Email:</strong> ${email}</p>
+
+            <hr style="margin: 16px 0;">
+
+            <p><strong>Mensaje:</strong></p>
+            <p>${mensaje.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p>
+          </div>
         `
       })
     });
