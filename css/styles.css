@@ -1099,3 +1099,8 @@ a {
 .form-status.error {
   color: #b42318;
 }
+
+.btn btn-outline{
+  background-color: #0b7a34;
+  color: yellow;
+}
