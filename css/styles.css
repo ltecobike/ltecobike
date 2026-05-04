@@ -124,6 +124,7 @@ a {
   min-height: 78vh;
   display: flex;
   align-items: center;
+  background-image: url('../img/hero.png');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -436,7 +437,6 @@ a {
 
 .card-body {
   padding: 22px;
-  
 }
 
 .card-body h3 {
