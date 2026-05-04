@@ -306,7 +306,7 @@ a {
 
 .benefit-number {
   display: block;
-  font-size: 34px;
+  font-size: 24px;
   font-weight: 800;
   color: white;
   line-height: 1;
@@ -316,8 +316,31 @@ a {
 .benefit-label {
   display: block;
   color: #e7f2ea;
-  font-size: 14px;
+  font-size: 18px;
 }
+
+.benefit-number1 {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.benefit-number1 {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.benefit-label2 {
+  display: block;
+  color: #e7f2ea;
+  font-size: 17px;
+}
+
 
 /* FEATURES */
 .feature-grid {
